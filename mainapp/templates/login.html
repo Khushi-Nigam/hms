@@ -1,0 +1,58 @@
+{% extends "parent.html" %}
+{% block body %}
+
+<h1 style="color:rgb(13, 13, 14);text-align: center; font-weight: bold;" class="pt-5 pb-5">Login</h1>
+{% if msg %}
+<div class="alert alert-primary" role="alert">
+    {{msg}}
+</div>
+{% endif %}
+<div class="row w-50 mx-auto pt-3 mb-4 body-bg-tertiary" style="background-color: rgba(225, 225, 225, 0.82); border-radius: 25px;">
+    <form method="post" style="background:transparent" class="pb-2">
+        {% csrf_token %}
+        <table class="table" style="border: transparent; background: transparent;">
+            <tr style="border: transparent;background: transparent;">
+                <td style="background: transparent;">Select Usertype</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="background: transparent;"><div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Select Usertype
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Patient</a></li>
+                      <li><a class="dropdown-item" href="#">Doctor</a></li>
+                    </ul>
+                  </div></td>
+            </tr>
+            <tr style="border: transparent;background: transparent;">
+                <td style="background: transparent;">Enter User Id</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="background: transparent;"><input type="text" name="username" class="form-control" required placeholder="Enter User Name" style="background-color: white;"></td>
+            </tr>
+            <tr style="border: transparent" style="background-color: rgba(225, 225, 225, 0.82)">
+                <td style="background: transparent;">Enter Password</td>
+            </tr>
+            <tr>
+                <td style="background: transparent;"><input type="password" name="password" class="form-control" required placeholder=" Enter Password" style="background-color: white;">
+                </td>
+            </tr>
+            <tr style="border: transparent;">
+                <td style="background: transparent;">Not Registered Yet?
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Register Now
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                         <a href="{%url 'mainapp:patientreg' %}"><li><button class="dropdown-item" type="button">Patient</button></li></a>
+                         <a href="{%url 'mainapp:doctorreg' %}"><li><button class="dropdown-item" type="button">Doctor</button></li></a>
+                        </ul>
+                      </div>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary w-25 mb-5"
+            style="background-color: brown; color: white; border:none; text-align: center;">Login</a>
+    </form>
+</div>
+{% endblock body %}

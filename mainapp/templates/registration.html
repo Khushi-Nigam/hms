@@ -1,0 +1,83 @@
+{% extends "parent.html" %}
+{% block body %}
+{% load static %}
+<h1 style="text-align: center; font-weight: bold;" class="pt-5 text-center pb-5"> Sign Up / Register</h1>
+<style>
+@media only screen and (max-width:600px){
+    #registration{
+       width: 100%;
+    }
+}
+</style>
+{% if msg %}
+<p style="text-align: center; color: brown;">{{msg}}</p>
+{% endif %}
+<div class="row w-50 mx-auto pt-3 pb-5 mb-5" id="registration" style="background-color: rgba(228, 221, 221, 0.566); border-radius: 30px;">
+    <form class="'form-group" method="post" >
+        {% csrf_token %}
+        <table  class="table" style="margin:auto; border: transparent; font-size: 20px; background-color: transparent;">
+            <tr>Register As</tr>
+            <tr><td style="background-color: transparent;"><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Register As
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Doctor</a></li>
+                  <li><a class="dropdown-item" href="#">Patient</a></li>
+                </ul>
+              </div></tr>
+            <tr><td style="background-color: transparent;">Upload profile Pic</tr>
+            <tr> <td style="background-color: transparent;"><input type="file" name="profilepic"></td>
+            </tr>
+        <tr>
+            <td style="background-color: transparent;">FirstName</td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;"><input type="text" name="firstname" class="form-control" required placeholder="First Name"></td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">Select Gender</td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;"><input type="radio" name="gender" value="male" class="form-check-input"/> Male
+                <input type="radio" name="gender" value="male" class="form-check-input"/> Female
+                </td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">Enter Address</td>
+    
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">
+                <textarea name="address" class="form-control" placeholder="Enter your street address" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">Enter Contact No.</td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;"><input type="number" name="contactno" class="form-control" required placeholder="Enter Contact No."></td>
+    
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">Enter Email</td>
+        </tr><td style="background-color: transparent;"><input type="email" name="emailaddress" required placeholder="Enter Email address" class="form-control"</td>
+        <tr>
+            <td style="background-color: transparent;">Enter Password</td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;"><input type="password" name="password" placeholder="Enter Password" required class="form-control"></td>
+    
+        </tr>
+        <tr>
+            <td style="background-color: transparent;">Confirm Password</td>
+        </tr>
+        <tr><td style="background-color: transparent;"><input type="password" name="password" placeholder="Confirm Password" required class="form-control"></td>
+        </tr>
+        <tr>
+            <td style="background-color: transparent;"><button type="submit" class="btn btn-primary" style="background-color: brown; color: white; border: none;">Register</button></td>
+        </tr>
+    </table>
+    </form>
+</div>
+{% endblock body %}

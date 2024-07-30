@@ -1,0 +1,51 @@
+{% extends "patientparent.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="text-align:center;">View your Profile</h1>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            <table class="table text-light" style="width:60%;margin:auto">
+                <tr>
+                    <td> First Name</td>
+                    <td>
+                        <input type="text" name="firstname" value="{{pat.firstname}}" class="form-control text-light" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Last Name</td>
+                    <td>
+                        <input type="text" name="lastname" value="{{pat.lastname}}" class="form-control text-light" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td>
+                        <input type="email" name="emailaddress" value="{{pat.emailaddress}}"
+                            class="form-control text-dark" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="text" name="password" value="{{pat.password}}" class="form-control text-light" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td style="background-color: transparent;"><input type="text" name="state" placeholder="State"
+                            class="form-control" value="{{pat.state}}">
+                    </td>
+                    <td style="background-color: transparent;"><input type="text" name="city" placeholder="City"
+                            class="form-control" value="{{pat.city}}">
+                    </td>
+                    <td style="background-color: transparent;"><input type="text" name="pincode" placeholder="Pincode"
+                            class="form-control" value="{{pat.pincode}}">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock body %}

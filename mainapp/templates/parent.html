@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crm</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js" integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <style>
+          .container{
+            max-width: 100%;
+          }
+      @media only screen and (max-width:600px) {
+      #first img{
+        width:280px;
+      }
+      #nav-toggler{
+        color: white;
+      }
+    }
+    .collapse ul li a{
+      color: brown;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .collapse ul li a:hover{
+      color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="container ">
+       <div class="row">
+          <h1 style="color: black; font-weight: 600; font-size: 30px; font-style: italic;" class="title text-center pt-3 "><span style="color: brown; font-weight: 700;">Healthy</span> Tails, <span style="color: brown; font-weight: 700;">Happiness</span> Prevails :-)</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="text-align: right;">
+            <div class="container-fluid bg-body-tertiary" >
+              <a class="navbar-brand " href="{% url 'mainapp:index' %}">
+                <img src="{% static 'images/logom.png' %}" height="80">
+              </a>
+              <button class="navbar-toggler text-light" id="nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
+                <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                   </li>
+                   <li><a class="btn" href="{%url 'mainapp:login' %}" style="background-color: brown; color: white;">Login</a></li>
+                </ul>  
+              </div>
+            </div>
+
+          </nav>
+       </div>
+  <div class="row">
+    {% block body %} 
+    
+    {% endblock body %}
+  </div>
+  <div class="footer bg-body-tertiary ">
+          <!-- Grid container -->
+    <section class="py-4 py-md-5">
+    <div class="container overflow-hidden bg-body-tertiary">
+      <div class="row">
+        <div class="col-12">
+          <div class="container-fluid border border-dark">
+            <div class="row">
+              <div class="col-xs-12 col-lg-4">
+                <div class="widget p-3 p-md-4 p-xxl-5">
+                  <h4 class="widget-title mb-4">Get in Touch</h4>
+                  <h6 class="mb-4">12-A Manas Complex, Aliganj</h6>
+                  <p class="mb-1">
+                    <a class="link-dark link-offset-1 link-opacity-75 link-opacity-100-hover link-underline-opacity-0 link-underline-opacity-100-hover">9889589656</a>
+                  </p>
+                  <p class="mb-0">
+                    <a class="link-dark link-offset-1 link-opacity-75 link-opacity-100-hover link-underline-opacity-0 link-underline-opacity-100-hover" href="https://mail.google.com/mail/u/0/#inbox">maarc@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-lg-4">
+                <div class="widget p-3 p-md-4 p-xxl-5">
+                  <h4 class="widget-title mb-4">Services</h4>
+                  <ul class="list-unstyled m-0 p-0">
+                    <li class="mb-2">
+                      <a href="#!" class="link-dark link-offset-1 link-opacity-75-hover link-underline-opacity-0 link-underline-opacity-100-hover">Pet Grooming</a>
+                    </li>
+                    <li class="mb-2">
+                      <a href="#!" class="link-dark link-offset-1 link-opacity-75-hover link-underline-opacity-0 link-underline-opacity-100-hover">Pet Trainings</a>
+                    </li>
+                    <li class="mb-2">
+                      <a href="#!" class="link-dark link-offset-1 link-opacity-75-hover link-underline-opacity-0 link-underline-opacity-100-hover">Pet Food</a>
+                    </li>
+                    <li class="mb-2">
+                      <a href="#!" class="link-dark link-offset-1 link-opacity-75-hover link-underline-opacity-0 link-underline-opacity-100-hover">Pet Well-Being</a>
+                    </li>
+                    <li class="mb-0">
+                      <a href="#!" class="link-dark link-offset-1 link-opacity-75-hover link-underline-opacity-0 link-underline-opacity-100-hover">Vaccinations</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-lg-4">
+                <div class="widget p-3 p-md-4 p-xxl-5">
+                  <h4 class="widget-title mb-4">Opening Hours</h4>
+                  <p class="mb-4">We always aim to provide a welcoming environment to deliver exceptional service.</p>
+                  <div>
+                    <div class="row mb-1">
+                      <div class="col-5 col-xl-4">
+                        <span class="fw-bold">Mon - Fri:</span>
+                      </div>
+                      <div class="col-7 col-xl-8">
+                        <span class="text-secondary">9am - 5pm</span>
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col-5 col-xl-4">
+                        <span class="fw-bold">Sat:</span>
+                      </div>
+                      <div class="col-7 col-xl-8">
+                        <span class="text-secondary">9am - 2pm</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-5 col-xl-4">
+                        <span class="fw-bold">Sun:</span>
+                      </div>
+                      <div class="col-7 col-xl-8">
+                        <span class="text-secondary">Closed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container px-4 pe-4 pb-2 text-center bg-body-tertiary">
+    <!-- Section: Social media -->
+    <section class="mb-2">
+      <!-- Facebook -->
+      <a
+      data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="https://www.facebook.com/"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="https://x.com/"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="https://mail.google.com/mail/u/0/#inbox"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="https://www.instagram.com/"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="https://www.linkedin.com/"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="https://github.com/"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+  </div>
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: brown; color: white;">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="{%url 'mainapp:index' %}">MAARC Labs</a>
+  </div>
+  <!-- Copyright -->
+  </div>
+       </div>
+    </div>
+</body>
+</html>
