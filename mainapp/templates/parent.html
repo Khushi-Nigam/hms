@@ -27,7 +27,7 @@
       }
     }
     .collapse ul li a{
-      color: brown;
+      color: rgb(141, 6, 139);
       font-size: 20px;
       font-weight: 600;
     }
@@ -37,18 +37,21 @@
     </style>
 </head>
 <body>
-    <div class="container ">
-       <div class="row">
-          <h1 style="color: black; font-weight: 600; font-size: 30px; font-style: italic;" class="title text-center pt-3 "><span style="color: brown; font-weight: 700;">Healthy</span> Tails, <span style="color: brown; font-weight: 700;">Happiness</span> Prevails :-)</h1>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="text-align: right;">
+    <div class="container">
+       <div class="row pt-3 pb-3">
+        <div class="col-sm-6">
+        <h2 class="p-3 ">Cura<span style="color: #ac2bac;">Med</span>&nbsp;<i class="fa-solid fa-house-medical"></i></h2></div>
+        <div class="col-sm-6 p-4" style="text-align: right;">
+        <a class="btn" href="{% url 'mainapp:login' %}" style="background-color: purple; color: white;">Login Here</a>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="text-align: right; position: sticky;overflow: hidden;">
             <div class="container-fluid bg-body-tertiary" >
               <a class="navbar-brand " href="{% url 'mainapp:index' %}">
-                <img src="{% static 'images/logom.png' %}" height="80">
               </a>
               <button class="navbar-toggler text-light" id="nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="nav justify-content-end">
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}">Home</a>
@@ -57,15 +60,16 @@
                     <a class="nav-link" aria-current="page" href="#">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="#">Services</a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                    </li>
-                   <li><a class="btn" href="{%url 'mainapp:login' %}" style="background-color: brown; color: white;">Login</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mainapp:blog' %}">Blog</a>
+                   </li>
                 </ul>  
               </div>
             </div>
-
           </nav>
        </div>
   <div class="row">
@@ -224,9 +228,9 @@
     </section>
   </div>
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: brown; color: white;">
+  <div class="text-center p-4" style="background-color: rgb(111, 5, 150); color: white;">
     © 2024 Copyright:
-    <a class="text-reset fw-bold" href="{%url 'mainapp:index' %}">MAARC Labs</a>
+    <a class="text-reset fw-bold" href="{%url 'mainapp:index' %}">LifeSpring </a>
   </div>
   <!-- Copyright -->
   </div>

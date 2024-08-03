@@ -1,0 +1,23 @@
+{% extends "doctorparent.html" %}
+{% block body %}
+<div class="row">
+    <table class="table-bordered">
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+            <th>category</th>
+            <th>summary</th>
+            <th>content</th>
+        </tr>
+        {% for b in blog %}
+        <tr>
+            <td>{{b.title}}</td>
+            <td>{{b.image}}</td>
+            <td>{{b.category}}</td>
+            <td>{{b.summary}}</td>
+            <td>{{b.content}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock body %}

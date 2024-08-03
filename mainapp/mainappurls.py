@@ -6,4 +6,5 @@ urlpatterns=[
     path('patientreg/',views.patientreg,name="patientreg"),
     path('doctorreg/',views.doctorreg,name="doctorreg"),
     path('login/',views.login,name="login"),
+    path('blog/',views.blog,name="blog"),
 ]

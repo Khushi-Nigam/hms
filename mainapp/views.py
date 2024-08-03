@@ -52,3 +52,5 @@ def login(request):
             msg="Invalid User"
         return render(request,'login.html',{"msg":msg}) 
     return render(request,"login.html")
+def blog(request):
+     return render(request,"blog.html")
