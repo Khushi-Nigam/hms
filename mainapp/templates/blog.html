@@ -4,13 +4,21 @@
 <div class="row">
     <h1>Know About Your Mental State !! </h1>
     <h4>From Our Specialists </h4>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    <div class="row">
+      {% for b in blog %}
+      <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+              <img src="{{b.image.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{b.title}}</h5>
+                <p class="card-text">{{b.summary}}</p>
+                <p class="card-text">{{b.content}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
       </div>
+      {% endfor %}
+  </div>
+    </div>
 </div>
 {% endblock body %}

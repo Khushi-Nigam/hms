@@ -1,0 +1,18 @@
+{% extends "doctorparent.html" %}
+{% block body %}
+<div class="row">
+    {% for d in draft %}
+    <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{d.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{d.title}}</h5>
+              <p class="card-text">{{d.summary}}</p>
+              <p class="card-text">{{d.content}}</p>
+              <a href="#" class="btn btn-primary">Post</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}

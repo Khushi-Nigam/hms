@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from . models import Login, Patient,Doctor
+from doctorapp.models import Blog
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 def index(request):
@@ -53,4 +54,5 @@ def login(request):
         return render(request,'login.html',{"msg":msg}) 
     return render(request,"login.html")
 def blog(request):
-     return render(request,"blog.html")
+     blog=Blog.objects.all()
+     return render(request,"blog.html",locals())

@@ -1,7 +1,9 @@
-{% extends "doctorparent.html" %}
+{% extends "patientparent.html" %}
 {% block body %}
+
 <div class="row">
     {% for b in blog %}
+    
     <div class="col-sm-3">
         <div class="card" style="width: 18rem;">
             <img src="{{b.image.url}}" class="card-img-top" alt="...">

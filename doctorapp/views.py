@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from mainapp.models import Doctor
 from django.views.decorators.cache import cache_control
-from . models import Blog
+from . models import Blog,Draft
 @cache_control(no_cache=True, must_revalidate=True,no_store=True)
 def doctorhome(request):
     try:
@@ -45,7 +45,7 @@ def myblog(request):
                 blog.save()
                 msg="Blog Posted Successfully"
                 return render(request,"myblog.html",locals())
-            return render(request,"myblog.html",locals())
+            return render(request,"myblog.html")
     except KeyError:
         return redirect("mainapp:login")
 @cache_control(no_cache=True, must_revalidate=True,no_store=True)
@@ -55,5 +55,14 @@ def viewblog(request):
             username=request.session["username"]
             blog=Blog.objects.all()
             return render(request,"viewblog.html",locals())
+    except KeyError:
+        return redirect("mainapp:login")
+@cache_control(no_cache=True, must_revalidate=True,no_store=True)
+def viewdrafts(request):
+    try:
+        if request.method!="POST":
+            username=request.session["username"]
+            draft=Draft.objects.all()
+            return render(request,"viewdrafts.html",locals())
     except KeyError:
         return redirect("mainapp:login")
